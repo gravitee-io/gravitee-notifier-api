@@ -33,7 +33,7 @@
     <version>1.1.0-SNAPSHOT</version>
 
     <properties>
-        <gravitee-common.version>1.13.0-SNAPSHOT</gravitee-common.version>
+        <gravitee-common.version>1.13.0</gravitee-common.version>
         <javax.inject.version>1</javax.inject.version>
     </properties>
 
