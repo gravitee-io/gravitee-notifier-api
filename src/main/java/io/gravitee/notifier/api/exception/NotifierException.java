@@ -13,7 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package io.gravitee.notifier.api;
+package io.gravitee.notifier.api.exception;
 
-public interface NotificationConfiguration {
+/**
+ * @author David BRASSELY (david.brassely at graviteesource.com)
+ * @author GraviteeSource Team
+ */
+public class NotifierException extends Exception {
+
+    public NotifierException() {
+    }
+
+    public NotifierException(String message) {
+        super(message);
+    }
+
+    public NotifierException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public NotifierException(Throwable cause) {
+        super(cause);
+    }
 }

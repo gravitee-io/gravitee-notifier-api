@@ -24,7 +24,7 @@
     <parent>
         <groupId>io.gravitee</groupId>
         <artifactId>gravitee-parent</artifactId>
-        <version>15</version>
+        <version>17</version>
     </parent>
 
     <groupId>io.gravitee.notifier</groupId>
@@ -33,8 +33,9 @@
     <version>1.2.0-SNAPSHOT</version>
 
     <properties>
-        <gravitee-common.version>1.14.0</gravitee-common.version>
+        <gravitee-common.version>1.15.1</gravitee-common.version>
         <javax.inject.version>1</javax.inject.version>
+        <freemarker.version>2.3.28</freemarker.version>
     </properties>
 
     <dependencies>
@@ -44,11 +45,31 @@
             <version>${gravitee-common.version}</version>
         </dependency>
 
+        <!-- Jackson dependencies -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>${freemarker.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
             <version>${javax.inject.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>javax.activation-api</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>

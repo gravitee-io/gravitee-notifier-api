@@ -15,17 +15,30 @@
  */
 package io.gravitee.notifier.api;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 import static java.util.concurrent.CompletableFuture.completedFuture;
 
-public abstract class AbstractNotifier implements Notifier  {
+/**
+ * @author David BRASSELY (david.brassely at graviteesource.com)
+ * @author GraviteeSource Team
+ */
+public abstract class AbstractNotifier implements Notifier {
 
-    protected abstract String getType();
+    protected final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    private final String type;
+
+    AbstractNotifier(String type) {
+        this.type = type;
+    }
 
     private boolean canHandle(final Notification notification) {
-        return getType().equals(notification.getType());
+        return type.equals(notification.getType());
     }
 
     @Override
@@ -33,7 +46,16 @@ public abstract class AbstractNotifier implements Notifier  {
         if (canHandle(notification)) {
             return doSend(notification, parameters);
         }
+
         return completedFuture(null);
+    }
+
+    private String getType() {
+        return type;
+    }
+
+    public String name() {
+        return null;
     }
 
     protected abstract CompletableFuture<Void> doSend(final Notification notification, final Map<String, Object> parameters);
