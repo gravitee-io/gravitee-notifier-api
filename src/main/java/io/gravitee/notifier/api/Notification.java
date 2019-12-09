@@ -19,11 +19,13 @@ import com.fasterxml.jackson.annotation.JsonRawValue;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import io.gravitee.notifier.api.jackson.RawJsonDeserializer;
 
+import java.io.Serializable;
+
 /**
  * @author David BRASSELY (david.brassely at graviteesource.com)
  * @author GraviteeSource Team
  */
-public class Notification {
+public class Notification implements Serializable {
 
     private String type;
 
