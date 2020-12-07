@@ -34,7 +34,6 @@
 
     <properties>
         <gravitee-common.version>1.16.0</gravitee-common.version>
-        <javax.inject.version>1</javax.inject.version>
         <freemarker.version>2.3.28</freemarker.version>
     </properties>
 
@@ -43,6 +42,7 @@
             <groupId>io.gravitee.common</groupId>
             <artifactId>gravitee-common</artifactId>
             <version>${gravitee-common.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Jackson dependencies -->
@@ -56,18 +56,7 @@
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
             <version>${freemarker.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.inject</groupId>
-            <artifactId>javax.inject</artifactId>
-            <version>${javax.inject.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>javax.activation-api</artifactId>
-            <version>1.2.0</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Logging -->
