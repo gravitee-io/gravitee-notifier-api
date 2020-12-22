@@ -30,7 +30,7 @@
     <groupId>io.gravitee.notifier</groupId>
     <artifactId>gravitee-notifier-api</artifactId>
     <name>Gravitee.io - Notifier</name>
-    <version>1.4.0</version>
+    <version>1.5.0-SNAPSHOT</version>
 
     <properties>
         <gravitee-common.version>1.16.2</gravitee-common.version>
