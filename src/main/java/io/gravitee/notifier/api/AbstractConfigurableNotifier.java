@@ -33,23 +33,25 @@ public abstract class AbstractConfigurableNotifier<C extends NotifierConfigurati
 
     protected C configuration;
 
-    private static final Configuration CONFIGURATION;
-
-    static {
-        CONFIGURATION =
-                new freemarker.template.Configuration(Configuration.VERSION_2_3_28);
-
-        CONFIGURATION.setNewBuiltinClassResolver(TemplateClassResolver.SAFER_RESOLVER);
-        CONFIGURATION.setTemplateLoader(new StringTemplateLoader());
-    }
+    private Configuration templateConfiguration;
 
     public AbstractConfigurableNotifier(String type, C configuration) {
         super(type);
         this.configuration = configuration;
+
+        Configuration defaultTemplateConfiguration = new freemarker.template.Configuration(Configuration.VERSION_2_3_28);
+        defaultTemplateConfiguration.setNewBuiltinClassResolver(TemplateClassResolver.SAFER_RESOLVER);
+        defaultTemplateConfiguration.setTemplateLoader(new StringTemplateLoader());
+        this.templateConfiguration = defaultTemplateConfiguration;
+    }
+
+    public AbstractConfigurableNotifier(String type, C configuration, Configuration templateConfiguration) {
+        this(type, configuration);
+        this.templateConfiguration = templateConfiguration;
     }
 
     protected String templatize(String payload, Map<String, Object> parameters) throws IOException, TemplateException {
-        final Template template = new Template(Integer.toString(payload.hashCode()), payload, CONFIGURATION);
+        final Template template = new Template(Integer.toString(payload.hashCode()), payload, templateConfiguration);
 
         StringWriter result = new StringWriter();
         template.process(parameters, result);
