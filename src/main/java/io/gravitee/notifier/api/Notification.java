@@ -20,6 +20,10 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import io.gravitee.notifier.api.jackson.RawJsonDeserializer;
 
 import java.io.Serializable;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.util.List;
 
 /**
  * @author David BRASSELY (david.brassely at graviteesource.com)
@@ -29,9 +33,29 @@ public class Notification implements Serializable {
 
     private String type;
 
+    private List<Period> periods;
+
     @JsonDeserialize(using = RawJsonDeserializer.class)
     @JsonRawValue
     private String configuration;
+
+    /**
+     * Indicates if the specified timestamp matches with one of the time periods defined for this notification.
+     *
+     * @param timestamp the timestamp to check against the time periods.
+     * @return <code>true</code> if the timestamp matches one of the time periods, <code>false</code> else.
+     */
+    public boolean canNotify(long timestamp) {
+        final List<Period> periods = this.getPeriods();
+
+        if (periods == null || periods.isEmpty()) {
+            return true;
+        }
+
+        final LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(timestamp), ZoneOffset.UTC);
+
+        return periods.stream().anyMatch(period -> period.isIncluded(localDateTime));
+    }
 
     public String getType() {
         return type;
@@ -47,5 +71,13 @@ public class Notification implements Serializable {
 
     public void setConfiguration(String configuration) {
         this.configuration = configuration;
+    }
+
+    public List<Period> getPeriods() {
+        return periods;
+    }
+
+    public void setPeriods(List<Period> periods) {
+        this.periods = periods;
     }
 }
