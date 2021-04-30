@@ -30,7 +30,7 @@ public class Period implements Serializable {
 
     private static final String DEFAULT_ZONE_ID = ZoneId.systemDefault().getId();
     private static final int DEFAULT_BEGIN_HOUR = 0;
-    private static final int DEFAULT_END_HOURS = 86400;
+    private static final int DEFAULT_END_HOURS = 86399;
 
     /**
      * List of the days covered by this period of time.
@@ -57,12 +57,12 @@ public class Period implements Serializable {
     @JsonCreator
     protected Period(@JsonProperty(value = "days") List<Integer> days,
                      @JsonProperty(value = "zoneId", required = true) String zoneId,
-                     @JsonProperty(value = "beginHour", required = true) int beginHour,
-                     @JsonProperty(value = "endHour", required = true) int endHour) {
+                     @JsonProperty(value = "beginHour", required = true) Integer beginHour,
+                     @JsonProperty(value = "endHour", required = true) Integer endHour) {
         this.days = days;
         this.zoneId = zoneId;
-        this.beginHour = beginHour;
-        this.endHour = endHour;
+        this.beginHour = beginHour == null ? DEFAULT_BEGIN_HOUR : beginHour;
+        this.endHour = endHour == null ? DEFAULT_END_HOURS : endHour;
     }
 
     public boolean isIncluded(LocalDateTime dateTime) {
