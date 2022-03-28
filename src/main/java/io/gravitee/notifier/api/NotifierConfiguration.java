@@ -15,5 +15,4 @@
  */
 package io.gravitee.notifier.api;
 
-public interface NotifierConfiguration {
-}
+public interface NotifierConfiguration {}

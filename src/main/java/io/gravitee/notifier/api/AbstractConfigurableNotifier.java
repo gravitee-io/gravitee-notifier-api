@@ -20,7 +20,6 @@ import freemarker.core.TemplateClassResolver;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
-
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.Map;
@@ -36,8 +35,7 @@ public abstract class AbstractConfigurableNotifier<C extends NotifierConfigurati
     private static final Configuration CONFIGURATION;
 
     static {
-        CONFIGURATION =
-                new freemarker.template.Configuration(Configuration.VERSION_2_3_28);
+        CONFIGURATION = new freemarker.template.Configuration(Configuration.VERSION_2_3_28);
 
         CONFIGURATION.setNewBuiltinClassResolver(TemplateClassResolver.SAFER_RESOLVER);
         CONFIGURATION.setTemplateLoader(new StringTemplateLoader());

@@ -19,6 +19,5 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 public interface Notifier {
-
     CompletableFuture<Void> send(Notification notification, Map<String, Object> parameters);
 }

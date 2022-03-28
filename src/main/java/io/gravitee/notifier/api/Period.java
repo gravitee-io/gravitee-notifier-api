@@ -17,7 +17,6 @@ package io.gravitee.notifier.api;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.io.Serializable;
 import java.time.*;
 import java.util.List;
@@ -55,10 +54,12 @@ public class Period implements Serializable {
     private int endHour;
 
     @JsonCreator
-    protected Period(@JsonProperty(value = "days") List<Integer> days,
-                     @JsonProperty(value = "zoneId", required = true) String zoneId,
-                     @JsonProperty(value = "beginHour", required = true) Integer beginHour,
-                     @JsonProperty(value = "endHour", required = true) Integer endHour) {
+    protected Period(
+        @JsonProperty(value = "days") List<Integer> days,
+        @JsonProperty(value = "zoneId", required = true) String zoneId,
+        @JsonProperty(value = "beginHour", required = true) Integer beginHour,
+        @JsonProperty(value = "endHour", required = true) Integer endHour
+    ) {
         this.days = days;
         this.zoneId = zoneId;
         this.beginHour = beginHour == null ? DEFAULT_BEGIN_HOUR : beginHour;
@@ -121,15 +122,11 @@ public class Period implements Serializable {
 
     @Override
     public String toString() {
-        return "Period{" +
-                "days=" + days +
-                ", zoneId='" + zoneId + '\'' +
-                ", beginHour=" + beginHour +
-                ", endHour=" + endHour +
-                '}';
+        return "Period{" + "days=" + days + ", zoneId='" + zoneId + '\'' + ", beginHour=" + beginHour + ", endHour=" + endHour + '}';
     }
 
     public static class Builder {
+
         private List<Integer> days;
         private String zoneId = DEFAULT_ZONE_ID;
         private int beginHour = DEFAULT_BEGIN_HOUR;
