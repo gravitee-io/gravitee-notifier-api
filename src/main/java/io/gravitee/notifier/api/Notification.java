@@ -18,7 +18,6 @@ package io.gravitee.notifier.api;
 import com.fasterxml.jackson.annotation.JsonRawValue;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import io.gravitee.notifier.api.jackson.RawJsonDeserializer;
-
 import java.io.Serializable;
 import java.time.Instant;
 import java.time.LocalDateTime;

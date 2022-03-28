@@ -21,8 +21,7 @@ package io.gravitee.notifier.api.exception;
  */
 public class NotifierException extends Exception {
 
-    public NotifierException() {
-    }
+    public NotifierException() {}
 
     public NotifierException(String message) {
         super(message);
