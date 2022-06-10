@@ -33,7 +33,7 @@
     <version>1.4.0</version>
 
     <properties>
-        <gravitee-common.version>1.16.2</gravitee-common.version>
+        <gravitee-common.version>1.27.0</gravitee-common.version>
         <freemarker.version>2.3.28</freemarker.version>
         <junit-jupiter.version>5.5.2</junit-jupiter.version>
     </properties>
