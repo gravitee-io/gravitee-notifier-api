@@ -24,7 +24,7 @@
     <parent>
         <groupId>io.gravitee</groupId>
         <artifactId>gravitee-parent</artifactId>
-        <version>17.2</version>
+        <version>21.0.0</version>
     </parent>
 
     <groupId>io.gravitee.notifier</groupId>
@@ -33,10 +33,25 @@
     <version>1.4.0</version>
 
     <properties>
-        <gravitee-common.version>1.16.2</gravitee-common.version>
-        <freemarker.version>2.3.28</freemarker.version>
-        <junit-jupiter.version>5.5.2</junit-jupiter.version>
+        <gravitee-bom.version>4.0.0-alpha.2</gravitee-bom.version>
+        <gravitee-common.version>2.0.0</gravitee-common.version>
+        <freemarker.version>2.3.32</freemarker.version>
+
+        <prettier-maven-plugin.version>0.19</prettier-maven-plugin.version>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Import bom to properly inherit all dependencies -->
+            <dependency>
+                <groupId>io.gravitee</groupId>
+                <artifactId>gravitee-bom</artifactId>
+                <version>${gravitee-bom.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -50,7 +65,6 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
         </dependency>
 
         <dependency>
@@ -70,13 +84,11 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -86,10 +98,9 @@
             <plugin>
                 <groupId>com.hubspot.maven.plugins</groupId>
                 <artifactId>prettier-maven-plugin</artifactId>
-                <version>0.17</version>
+                <version>${prettier-maven-plugin.version}</version>
                 <configuration>
-                    <nodeVersion>12.13.0</nodeVersion>
-                    <prettierJavaVersion>1.6.1</prettierJavaVersion>
+                    <prettierJavaVersion>2.1.0</prettierJavaVersion>
                 </configuration>
                 <executions>
                     <execution>
