@@ -35,7 +35,7 @@ public abstract class AbstractConfigurableNotifier<C extends NotifierConfigurati
     private static final Configuration CONFIGURATION;
 
     static {
-        CONFIGURATION = new freemarker.template.Configuration(Configuration.VERSION_2_3_28);
+        CONFIGURATION = new freemarker.template.Configuration(Configuration.VERSION_2_3_32);
 
         CONFIGURATION.setNewBuiltinClassResolver(TemplateClassResolver.SAFER_RESOLVER);
         CONFIGURATION.setTemplateLoader(new StringTemplateLoader());
