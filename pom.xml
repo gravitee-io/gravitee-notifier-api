@@ -33,7 +33,7 @@
     <version>1.4.2</version>
 
     <properties>
-        <gravitee-bom.version>4.0.0-alpha.2</gravitee-bom.version>
+        <gravitee-bom.version>4.0.0</gravitee-bom.version>
         <gravitee-common.version>2.0.0</gravitee-common.version>
         <freemarker.version>2.3.32</freemarker.version>
 
