@@ -30,7 +30,7 @@
     <groupId>io.gravitee.notifier</groupId>
     <artifactId>gravitee-notifier-api</artifactId>
     <name>Gravitee.io - Notifier</name>
-    <version>1.4.0</version>
+    <version>1.4.2</version>
 
     <properties>
         <gravitee-bom.version>4.0.0-alpha.2</gravitee-bom.version>
