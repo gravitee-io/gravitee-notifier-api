@@ -34,7 +34,7 @@
 
     <properties>
         <gravitee-bom.version>4.0.0</gravitee-bom.version>
-        <gravitee-common.version>2.0.0</gravitee-common.version>
+        <gravitee-common.version>2.3.0</gravitee-common.version>
         <freemarker.version>2.3.34</freemarker.version>
 
         <prettier-maven-plugin.version>0.19</prettier-maven-plugin.version>
