@@ -1,3 +1,15 @@
+# [2.0.0-alpha.1](https://github.com/gravitee-io/gravitee-notifier-api/compare/1.4.3...2.0.0-alpha.1) (2026-02-09)
+
+
+### chore
+
+* update project configuration ([406e9bd](https://github.com/gravitee-io/gravitee-notifier-api/commit/406e9bdf0c1189600db1fb4aaa7f1d190fb39337))
+
+
+### BREAKING CHANGES
+
+* requires JDK 21
+
 ## [1.4.3](https://github.com/gravitee-io/gravitee-notifier-api/compare/1.4.2...1.4.3) (2023-03-16)
 
 
