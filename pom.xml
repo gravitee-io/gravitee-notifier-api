@@ -24,7 +24,7 @@
     <parent>
         <groupId>io.gravitee</groupId>
         <artifactId>gravitee-parent</artifactId>
-        <version>23.5.0</version>
+        <version>24.0.0</version>
     </parent>
 
     <groupId>io.gravitee.notifier</groupId>
@@ -35,6 +35,7 @@
     <properties>
         <gravitee-bom.version>8.3.47</gravitee-bom.version>
         <gravitee-common.version>4.9.0</gravitee-common.version>
+        <gravitee-node.version>8.0.1</gravitee-node.version>
 
         <freemarker.version>2.3.34</freemarker.version>
     </properties>
@@ -57,6 +58,13 @@
             <groupId>io.gravitee.common</groupId>
             <artifactId>gravitee-common</artifactId>
             <version>${gravitee-common.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.gravitee.node</groupId>
+            <artifactId>gravitee-node-logging</artifactId>
+            <version>${gravitee-node.version}</version>
             <scope>provided</scope>
         </dependency>
 

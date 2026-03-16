@@ -17,10 +17,10 @@ package io.gravitee.notifier.api;
 
 import static java.util.concurrent.CompletableFuture.completedFuture;
 
+import io.gravitee.node.logging.NodeLoggerFactory;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * @author David BRASSELY (david.brassely at graviteesource.com)
@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractNotifier implements Notifier {
 
-    protected final Logger logger = LoggerFactory.getLogger(this.getClass());
+    protected final Logger logger = NodeLoggerFactory.getLogger(this.getClass());
 
     private final String type;
 
