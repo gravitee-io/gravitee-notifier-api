@@ -34,7 +34,7 @@
 
     <properties>
         <gravitee-bom.version>8.3.65</gravitee-bom.version>
-        <gravitee-common.version>4.9.1</gravitee-common.version>
+        <gravitee-common.version>5.2.0</gravitee-common.version>
         <gravitee-node.version>8.1.0</gravitee-node.version>
 
         <freemarker.version>2.3.34</freemarker.version>
