@@ -165,3 +165,4 @@ buildNumber.properties
 .mvn/timing.properties
 
 gravitee-notifier-api.iml
+.DS_Store
