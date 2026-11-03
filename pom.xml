@@ -37,7 +37,7 @@
         <gravitee-common.version>4.9.1</gravitee-common.version>
         <gravitee-node.version>8.1.0</gravitee-node.version>
 
-        <freemarker.version>2.3.34</freemarker.version>
+        <freemarker.version>2.3.35</freemarker.version>
     </properties>
 
     <dependencyManagement>
