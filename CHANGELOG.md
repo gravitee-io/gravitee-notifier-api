@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/gravitee-io/gravitee-notifier-api/compare/2.0.0...2.0.1) (2026-11-20)
+
+
+### Bug Fixes
+
+* **freemarker:** harden template sandbox against reflection-based escapes ([e8d0992](https://github.com/gravitee-io/gravitee-notifier-api/commit/e8d09920501940f55cc8eaf9ed4ee7f9134d4641))
+
 # [2.0.0](https://github.com/gravitee-io/gravitee-notifier-api/compare/1.4.3...2.0.0) (2026-03-16)
 
 
