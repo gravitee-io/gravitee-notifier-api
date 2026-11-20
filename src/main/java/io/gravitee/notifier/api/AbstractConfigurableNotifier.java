@@ -15,11 +15,10 @@
  */
 package io.gravitee.notifier.api;
 
-import freemarker.cache.StringTemplateLoader;
-import freemarker.core.TemplateClassResolver;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
+import io.gravitee.notifier.api.freemarker.SecureFreemarkerConfiguration;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.Map;
@@ -32,14 +31,7 @@ public abstract class AbstractConfigurableNotifier<C extends NotifierConfigurati
 
     protected C configuration;
 
-    private static final Configuration CONFIGURATION;
-
-    static {
-        CONFIGURATION = new freemarker.template.Configuration(Configuration.VERSION_2_3_32);
-
-        CONFIGURATION.setNewBuiltinClassResolver(TemplateClassResolver.SAFER_RESOLVER);
-        CONFIGURATION.setTemplateLoader(new StringTemplateLoader());
-    }
+    private static final Configuration CONFIGURATION = SecureFreemarkerConfiguration.create();
 
     public AbstractConfigurableNotifier(String type, C configuration) {
         super(type);
