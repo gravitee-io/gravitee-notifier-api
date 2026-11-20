@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/gravitee-io/gravitee-notifier-api/compare/2.0.1...2.0.2) (2026-11-20)
+
+
+### Bug Fixes
+
+* **deps:** update freemarker to v2.3.35 ([62e45cd](https://github.com/gravitee-io/gravitee-notifier-api/commit/62e45cd722a19a63e3275252d1f30c8a560040c7))
+
 ## [2.0.1](https://github.com/gravitee-io/gravitee-notifier-api/compare/2.0.0...2.0.1) (2026-11-20)
 
 
